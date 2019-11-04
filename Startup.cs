@@ -6,9 +6,12 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Proyecto_Final_Multiplataforma.Models;
 
 namespace Proyecto_Final_Multiplataforma
 {
@@ -30,6 +33,12 @@ namespace Proyecto_Final_Multiplataforma
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
+             services.AddDbContext<MongoContext>(
+                o => o.UseMySql("server=localhost;user=root;password=;database=basededatos;")
+            );
+
+            services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<MongoContext>();
+
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
