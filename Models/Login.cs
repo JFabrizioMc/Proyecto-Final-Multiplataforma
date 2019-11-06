@@ -12,7 +12,7 @@ namespace Proyecto_Final_Multiplataforma.Models
         [Required]
         [Display(Name="Contraseña")]
         [DataType(DataType.Password)]
-        public string Password { get; set; }
+        public string Contraseña { get; set; }
         
     }
 }

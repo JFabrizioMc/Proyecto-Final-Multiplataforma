@@ -39,6 +39,21 @@ namespace Proyecto_Final_Multiplataforma
 
             services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<MongoContext>();
 
+            services.Configure<IdentityOptions>(options =>
+            {
+                //Configuracion de login sobre password
+                options.Password.RequireDigit = false;
+                options.Password.RequireLowercase = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequireNonAlphanumeric = false;
+            });
+
+             services.ConfigureApplicationCookie(options =>
+            {
+                options.LoginPath = "/Cuenta/Login";
+
+            });
+
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);

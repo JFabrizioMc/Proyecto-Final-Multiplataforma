@@ -34,6 +34,29 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
+
+                        @if (!User.Identity.IsAuthenticated) {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Cuenta" asp-action="CrearCuenta">Crear cuenta</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Cuenta" asp-action="Login">Iniciar Sesion</a>
+                            </li>
+                           }
+                        else {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="Cuenta" asp-action="CrearRol">Crear Rol</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="Cuenta" asp-action="AsociarRol">Asociar Rol</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="Cuenta" asp-action="CerrarSesion">Cerrar sesión</a>
+                            </li>
+
+                        }
+                        
+
                     </ul>
                 </div>
             </div>

@@ -5,14 +5,14 @@ using Proyecto_Final_Multiplataforma.Models;
 
 namespace Proyecto_Final_Multiplataforma
 {
-    public class Cuenta : Controller
+    public class CuentaController : Controller
     {
         private MongoContext _mg;
         private SignInManager<IdentityUser> _sim;
         private UserManager<IdentityUser> _um;
         private RoleManager<IdentityRole> _rm;
 
-        public Cuenta(MongoContext mg , SignInManager<IdentityUser> sim, UserManager<IdentityUser> um , RoleManager<IdentityRole> rm) {
+        public CuentaController(MongoContext mg , SignInManager<IdentityUser> sim, UserManager<IdentityUser> um , RoleManager<IdentityRole> rm) {
             _mg=mg;
             _sim=sim;
             _um=um;
@@ -48,7 +48,7 @@ namespace Proyecto_Final_Multiplataforma
             return RedirectToAction("index", "home");
         }
 
-        public IActionResult Crear() {
+        public IActionResult CrearCuenta() {
             return View();
         }
 
@@ -57,14 +57,14 @@ namespace Proyecto_Final_Multiplataforma
         }
 
         [HttpPost]
-        public IActionResult Crear(CrearCuenta model) {
+        public IActionResult CrearCuenta(CrearCuenta model) {
             if (ModelState.IsValid) {
                 var usuario = new IdentityUser();
                 usuario.UserName = model.Correo;
                 usuario.Email = model.Correo;
 
-                IdentityResult resultado = _um.CreateAsync(usuario, model.Contraseña).Result;
-                var r = _um.AddToRoleAsync(usuario, "Usuario").Result;
+                IdentityResult resultado = _um.CreateAsync(usuario, model.Contraseña1).Result;
+                var r = _um.AddToRoleAsync(usuario,"Usuario").Result;
 
 
                 if (resultado.Succeeded) {
@@ -90,11 +90,11 @@ namespace Proyecto_Final_Multiplataforma
             if (ModelState.IsValid) {
 
              
-                var resultado = _sim.PasswordSignInAsync(model.Correo, model.Password, true, false).Result;
+                var resultado = _sim.PasswordSignInAsync(model.Correo, model.Contraseña, true, false).Result;
 
                 if (resultado.Succeeded) {
 
-                    return RedirectToAction("index", "home");
+                    return RedirectToAction("index","home");
                 }
                 else {
                     
@@ -108,7 +108,7 @@ namespace Proyecto_Final_Multiplataforma
         public IActionResult Logout() {
             _sim.SignOutAsync();
 
-            return RedirectToAction("index", "home");
+            return RedirectToAction("index","home");
         }
     }
 }

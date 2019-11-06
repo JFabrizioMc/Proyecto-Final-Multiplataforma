@@ -13,14 +13,14 @@ namespace Proyecto_Final_Multiplataforma.Models
         [Display(Name="Contraseña")]
         [DataType(DataType.Password)]
         //contraseña1
-        public string Contraseña { get; set;}
+        public string Contraseña1 { get; set;}
         [Required]
         [DataType(DataType.Password)]
         [Display(Name="Confirmar Contraseña")]
-        [Compare("Password1", ErrorMessage = "Las contraseñas no coinciden")]
+        [Compare("Contraseña1", ErrorMessage = "Las contraseñas no coinciden")]
 
         //contraseña2
-        public string Password2 { get; set; }
+        public string Contraseña2 { get; set; }
 
 
 
