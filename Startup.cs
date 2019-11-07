@@ -37,7 +37,7 @@ namespace Proyecto_Final_Multiplataforma
                 o => o.UseMySql("server=localhost;user=root;password=;database=basededatos;")
             );
 
-            services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<MongoContext>();
+            services.AddDefaultIdentity<IdentityUser>().AddEntityFrameworkStores<MongoContext>();
 
             services.Configure<IdentityOptions>(options =>
             {
@@ -76,6 +76,7 @@ namespace Proyecto_Final_Multiplataforma
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+            app.UseAuthentication();
 
             app.UseMvc(routes =>
             {

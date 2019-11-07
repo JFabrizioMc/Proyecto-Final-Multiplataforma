@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Proyecto_Final_Multiplataforma.Models
 {
-    public class Login
+    public class LoginViewModel
     {
         [Required]
         [EmailAddress]
@@ -12,7 +12,7 @@ namespace Proyecto_Final_Multiplataforma.Models
         [Required]
         [Display(Name="Contraseña")]
         [DataType(DataType.Password)]
-        public string Contraseña { get; set; }
+        public string Password{ get; set; }
         
     }
 }
