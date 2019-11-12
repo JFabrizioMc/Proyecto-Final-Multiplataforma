@@ -15,11 +15,12 @@ namespace Proyecto_Final_Multiplataforma.Models
         public string Foto { get; set; }
         
         [Required]        
-        public int Categoria { get; set; }
+        public Categorias Categoria { get; set; }
 
         [Required]
         public int CategoriaId { get; set; }
-        
+        [Required]
+        public decimal PrecioUnit { get; set; }
         [Required]
         [Display(Name="Descripcion")]
         public string Descripcion { get; set; }

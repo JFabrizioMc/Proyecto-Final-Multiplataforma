@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Proyecto_Final_Multiplataforma.Models;
 
 namespace Proyecto_Final_Multiplataforma.Migrations
 {
     [DbContext(typeof(MongoContext))]
-    partial class MongoContextModelSnapshot : ModelSnapshot
+    [Migration("20191112164115_precioUnit2")]
+    partial class precioUnit2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -196,7 +198,11 @@ namespace Proyecto_Final_Multiplataforma.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<int>("Categoria");
+
                     b.Property<int>("CategoriaId");
+
+                    b.Property<int?>("CategoriasId");
 
                     b.Property<string>("Descripcion")
                         .IsRequired();
@@ -211,7 +217,7 @@ namespace Proyecto_Final_Multiplataforma.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CategoriaId");
+                    b.HasIndex("CategoriasId");
 
                     b.ToTable("Productos");
                 });
@@ -263,10 +269,9 @@ namespace Proyecto_Final_Multiplataforma.Migrations
 
             modelBuilder.Entity("Proyecto_Final_Multiplataforma.Models.Productos", b =>
                 {
-                    b.HasOne("Proyecto_Final_Multiplataforma.Models.Categorias", "Categoria")
+                    b.HasOne("Proyecto_Final_Multiplataforma.Models.Categorias")
                         .WithMany("Productos")
-                        .HasForeignKey("CategoriaId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("CategoriasId");
                 });
 #pragma warning restore 612, 618
         }
