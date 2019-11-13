@@ -24,9 +24,6 @@ namespace Proyecto_Final_Multiplataforma.Models
         [Required]
         [Display(Name="Descripcion")]
         public string Descripcion { get; set; }
-
-        [Required]
-        [Display(Name="Descripcion")]
-        public decimal PrecioUnitario { get; set; }
+      
     }
 }
