@@ -13,7 +13,7 @@ namespace Proyecto_Final_Multiplataforma.Controllers
 
         public IActionResult Index(){
             var lista = _context.Productos.ToList();
-            return View();
+            return View(lista);
         }
         public IActionResult AgregarProd(){
             ViewBag.Categorias = _context.Categorias.ToList();            
