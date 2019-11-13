@@ -30,5 +30,6 @@ namespace Proyecto_Final_Multiplataforma.Controllers
             ViewBag.Categorias = _context.Categorias.ToList();
             return View(p);
         }
+ 
     }
 }
