@@ -20,6 +20,7 @@ namespace Proyecto_Final_Multiplataforma.Models
         [Required]
         public int CategoriaId { get; set; }
         [Required]
+        [Display(Name="Precio Unitario")]
         public decimal PrecioUnit { get; set; }
         [Required]
         [Display(Name="Descripcion")]
