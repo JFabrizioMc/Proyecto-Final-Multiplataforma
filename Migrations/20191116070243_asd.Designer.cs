@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Proyecto_Final_Multiplataforma.Models;
 
 namespace Proyecto_Final_Multiplataforma.Migrations
 {
     [DbContext(typeof(MongoContext))]
-    partial class MongoContextModelSnapshot : ModelSnapshot
+    [Migration("20191116070243_asd")]
+    partial class asd
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
