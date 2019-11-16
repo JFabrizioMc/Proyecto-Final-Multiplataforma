@@ -1,4 +1,9 @@
 @model List<Productos>
+@if (TempData["mensaje"] != null) {
+    <div class="alert alert-success">
+        @TempData["mensaje"]
+    </div>
+}
 
 
     <h1>ProductosGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</h1>
