@@ -1,6 +1,11 @@
 ﻿@{
     ViewData["Title"] = "MongoImports";
 }
+@if (TempData["mensaje"] != null) {
+    <div class="alert alert-success">
+        @TempData["mensaje"]
+    </div>
+}
 
 <div class="text-center">
     <h1 class="display-4">Bienvenido a MongoImports!</h1>

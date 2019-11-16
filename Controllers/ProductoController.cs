@@ -1,9 +1,12 @@
 using System.Linq;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Proyecto_Final_Multiplataforma.Models;
 
 namespace Proyecto_Final_Multiplataforma.Controllers
 {
+    
+    
     public class ProductoController : Controller
     {
         private MongoContext _context;
@@ -15,6 +18,8 @@ namespace Proyecto_Final_Multiplataforma.Controllers
             var lista = _context.Productos.ToList();
             return View(lista);
         }
+
+        [Authorize(Roles="admin")]
         public IActionResult AgregarProd(){
             ViewBag.Categorias = _context.Categorias.ToList();            
             return View();

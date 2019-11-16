@@ -39,7 +39,7 @@ namespace Proyecto_Final_Multiplataforma.Models
             modelBuilder.Entity<IdentityUser>().HasData(new IdentityUser{
                 Id="ADMIN_ID",
                 UserName="admin@admin.com",
-                NormalizedUserName="aadmin@admin.com",
+                NormalizedUserName="admin@admin.com",
                 Email="admin@admin.com",
                 NormalizedEmail="admin@admin.com",
                 EmailConfirmed=true,

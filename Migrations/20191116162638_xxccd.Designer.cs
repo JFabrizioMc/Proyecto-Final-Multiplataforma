@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Proyecto_Final_Multiplataforma.Models;
 
 namespace Proyecto_Final_Multiplataforma.Migrations
 {
     [DbContext(typeof(MongoContext))]
-    partial class MongoContextModelSnapshot : ModelSnapshot
+    [Migration("20191116162638_xxccd")]
+    partial class xxccd
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -43,7 +45,7 @@ namespace Proyecto_Final_Multiplataforma.Migrations
                         new
                         {
                             Id = "ROLE_ID",
-                            ConcurrencyStamp = "d3a63c61-8a64-48d1-8a4c-5b1fbdb9536f",
+                            ConcurrencyStamp = "1a9ba75e-d177-4ae6-ad90-05d38ba891b0",
                             Name = "admin",
                             NormalizedName = "admin"
                         });
@@ -122,13 +124,13 @@ namespace Proyecto_Final_Multiplataforma.Migrations
                         {
                             Id = "ADMIN_ID",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "77487bbc-50bb-4f28-8004-ed469509743d",
+                            ConcurrencyStamp = "b6270a29-cb37-4d95-a20f-32c83e7107fa",
                             Email = "admin@admin.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "admin@admin.com",
-                            NormalizedUserName = "admin@admin.com",
-                            PasswordHash = "AQAAAAEAACcQAAAAEC8V5ym1UBYRdwpKS0id8fpwDImI2FeSk81hn6JC5Z1MVrvqSkELcK+hGaehD2dfOg==",
+                            NormalizedUserName = "aadmin@admin.com",
+                            PasswordHash = "AQAAAAEAACcQAAAAEETz5ViTx2/Q7f0rt6JYU2xEAvYeo8rl7GTC2q26g1FlP2ac6nwKfRxUc2Ox5tz84w==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,

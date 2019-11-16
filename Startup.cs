@@ -37,7 +37,7 @@ namespace Proyecto_Final_Multiplataforma
                 o => o.UseMySql("server=localhost;user=root;password=;database=basededatos;")
             );
 
-            services.AddDefaultIdentity<IdentityUser>().AddEntityFrameworkStores<MongoContext>();
+            services.AddIdentity<IdentityUser,IdentityRole>().AddEntityFrameworkStores<MongoContext>();
 
             services.Configure<IdentityOptions>(options =>
             {
