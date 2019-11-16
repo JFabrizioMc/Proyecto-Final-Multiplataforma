@@ -9,8 +9,8 @@ using Proyecto_Final_Multiplataforma.Models;
 namespace Proyecto_Final_Multiplataforma.Migrations
 {
     [DbContext(typeof(MongoContext))]
-    [Migration("20191112164115_precioUnit2")]
-    partial class precioUnit2
+    [Migration("20191116055952_cucu")]
+    partial class cucu
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -191,6 +191,13 @@ namespace Proyecto_Final_Multiplataforma.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Categorias");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Nombre = "Teclados"
+                        });
                 });
 
             modelBuilder.Entity("Proyecto_Final_Multiplataforma.Models.Productos", b =>
@@ -198,11 +205,7 @@ namespace Proyecto_Final_Multiplataforma.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("Categoria");
-
                     b.Property<int>("CategoriaId");
-
-                    b.Property<int?>("CategoriasId");
 
                     b.Property<string>("Descripcion")
                         .IsRequired();
@@ -217,7 +220,7 @@ namespace Proyecto_Final_Multiplataforma.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CategoriasId");
+                    b.HasIndex("CategoriaId");
 
                     b.ToTable("Productos");
                 });
@@ -269,9 +272,10 @@ namespace Proyecto_Final_Multiplataforma.Migrations
 
             modelBuilder.Entity("Proyecto_Final_Multiplataforma.Models.Productos", b =>
                 {
-                    b.HasOne("Proyecto_Final_Multiplataforma.Models.Categorias")
+                    b.HasOne("Proyecto_Final_Multiplataforma.Models.Categorias", "Categoria")
                         .WithMany("Productos")
-                        .HasForeignKey("CategoriasId");
+                        .HasForeignKey("CategoriaId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

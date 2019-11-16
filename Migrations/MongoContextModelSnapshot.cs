@@ -189,6 +189,23 @@ namespace Proyecto_Final_Multiplataforma.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Categorias");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Nombre = "Teclados"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Nombre = "Audifonos"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Nombre = "Mouses"
+                        });
                 });
 
             modelBuilder.Entity("Proyecto_Final_Multiplataforma.Models.Productos", b =>

@@ -51,6 +51,7 @@ namespace Proyecto_Final_Multiplataforma
              services.ConfigureApplicationCookie(options =>
             {
                 options.LoginPath = "/Cuenta/Login";
+                options.AccessDeniedPath = "/Cuenta/AccesoDenegado";
 
             });
 

@@ -25,6 +25,7 @@ namespace Proyecto_Final_Multiplataforma.Controllers
             if (ModelState.IsValid) {
                 _context.Add(p);
                 _context.SaveChanges();
+                TempData["mensaje"] = "El producto fue registrado exitosamente";
                 return RedirectToAction("Index");
             }
             ViewBag.Categorias = _context.Categorias.ToList();

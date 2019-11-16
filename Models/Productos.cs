@@ -14,10 +14,8 @@ namespace Proyecto_Final_Multiplataforma.Models
         [Display(Name="Foto")]
         public string Foto { get; set; }
         
-        [Required]        
         public Categorias Categoria { get; set; }
 
-        [Required]
         public int CategoriaId { get; set; }
         [Required]
         [Display(Name="Precio Unitario")]

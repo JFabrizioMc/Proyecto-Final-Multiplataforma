@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Proyecto_Final_Multiplataforma.Models
 {
@@ -8,6 +9,7 @@ namespace Proyecto_Final_Multiplataforma.Models
         [Required]
         [EmailAddress]
         [Display(Name="Correo electrónico")]
+        
         public string Correo { get; set; }
         [Required]
         [Display(Name="Contraseña")]
@@ -18,6 +20,7 @@ namespace Proyecto_Final_Multiplataforma.Models
         [DataType(DataType.Password)]
         [Display(Name="Confirmar Contraseña")]
         [Compare("Password1", ErrorMessage = "Las contraseñas no coinciden")]
+      
 
         //contraseña2
         public string Password2 { get; set; }
