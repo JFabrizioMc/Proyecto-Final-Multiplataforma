@@ -1,6 +1,7 @@
 using System.Linq;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Proyecto_Final_Multiplataforma.Models;
 
 namespace Proyecto_Final_Multiplataforma.Controllers
@@ -41,6 +42,15 @@ namespace Proyecto_Final_Multiplataforma.Controllers
             }
             ViewBag.Categorias = _context.Categorias.ToList();
             return View(p);
+        }
+
+        public IActionResult VerCategoria(int id){
+    
+            var productos = _context.Productos.Where(x => x.CategoriaId == id).ToList();
+
+  
+            return View(productos);
+
         }
  
     }

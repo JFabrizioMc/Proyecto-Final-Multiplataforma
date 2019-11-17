@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] Mongo Imports</title>
+    
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -40,13 +41,18 @@
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Categorías
                         </a>
+
+                        
+
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">CPU</a>
-                            <a class="dropdown-item" href="#">Pantallas</a>
-                            <a class="dropdown-item" href="#">Celulares</a>
-                            <a class="dropdown-item" href="#">Audífonos</a>
-                            <a class="dropdown-item" href="#">Periféricos</a>
+                            <a class="dropdown-item" asp-controller="Producto" asp-route-id=1 asp-action="VerCategoria">CPU</a>
+                            <a class="dropdown-item"  asp-controller="Producto"asp-route-id=2 asp-action="VerCategoria">Pantallas</a>
+                            <a class="dropdown-item" asp-controller="Producto" asp-route-id=3 asp-action="VerCategoria">Celulares</a>
+                            <a class="dropdown-item"  asp-controller="Producto"asp-route-id=4 asp-action="VerCategoria">Audífonos</a>
+                            <a class="dropdown-item"  asp-controller="Producto"asp-route-id=5 asp-action="VerCategoria">Periféricos</a>
+                            
                         </div>
+
                         </li>
                     @if (!User.Identity.IsAuthenticated) {
                         <li class="nav-item">
