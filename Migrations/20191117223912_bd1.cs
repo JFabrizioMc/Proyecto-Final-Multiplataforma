@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Proyecto_Final_Multiplataforma.Migrations
 {
-    public partial class aea2019 : Migration
+    public partial class bd1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -192,12 +192,12 @@ namespace Proyecto_Final_Multiplataforma.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "ROLE_ID", "a56fd1d9-30a0-4de3-96f7-96a857887f40", "admin", "admin" });
+                values: new object[] { "ROLE_ID", "23605597-3836-4378-8f0a-9b363a1a10b6", "admin", "admin" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "ADMIN_ID", 0, "f23b2053-4c73-43a9-926a-9f5664752ad9", "admin@admin.com", true, false, null, "admin@admin.com", "admin@admin.com", "AQAAAAEAACcQAAAAEGzAIWja2pQ1HtwINjGp4sbNtHSMlgAo/Cd8VreTNrcK4p/KyglBEInXhSRk/w+EeA==", null, false, "", false, "admin@admin.com" });
+                values: new object[] { "ADMIN_ID", 0, "1389dbca-f099-492a-b7f1-c7fb2356e602", "admin@admin.com", true, false, null, "admin@admin.com", "admin@admin.com", "AQAAAAEAACcQAAAAENJx1g7JOl7drB12e46+yCktS+vXTSX2jNw1vvGPBosuvX4UGe3v4LcvW8z4k4mUdw==", null, false, "", false, "admin@admin.com" });
 
             migrationBuilder.InsertData(
                 table: "Categorias",

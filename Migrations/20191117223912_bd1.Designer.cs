@@ -9,8 +9,8 @@ using Proyecto_Final_Multiplataforma.Models;
 namespace Proyecto_Final_Multiplataforma.Migrations
 {
     [DbContext(typeof(MongoContext))]
-    [Migration("20191117182244_cukin")]
-    partial class cukin
+    [Migration("20191117223912_bd1")]
+    partial class bd1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -45,7 +45,7 @@ namespace Proyecto_Final_Multiplataforma.Migrations
                         new
                         {
                             Id = "ROLE_ID",
-                            ConcurrencyStamp = "46acc43c-075c-4ab5-afdb-c66c2ccb3daf",
+                            ConcurrencyStamp = "23605597-3836-4378-8f0a-9b363a1a10b6",
                             Name = "admin",
                             NormalizedName = "admin"
                         });
@@ -124,13 +124,13 @@ namespace Proyecto_Final_Multiplataforma.Migrations
                         {
                             Id = "ADMIN_ID",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "772dbac5-7234-4300-8cc9-3eb397fdd4b3",
+                            ConcurrencyStamp = "1389dbca-f099-492a-b7f1-c7fb2356e602",
                             Email = "admin@admin.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "admin@admin.com",
                             NormalizedUserName = "admin@admin.com",
-                            PasswordHash = "AQAAAAEAACcQAAAAEG6Y1/cvdPZwl4MC3AXoij7TDnYqYlgBlqdU+pkxuRB6ZYSBeN8sSbI7fmFD7MyxsA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAENJx1g7JOl7drB12e46+yCktS+vXTSX2jNw1vvGPBosuvX4UGe3v4LcvW8z4k4mUdw==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
