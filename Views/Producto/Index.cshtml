@@ -1,21 +1,30 @@
 @model List<Productos>
+
 @if (TempData["mensaje"] != null) {
     <div class="alert alert-success">
         @TempData["mensaje"]
     </div>
 }
 
+<h1>ProductosGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</h1>
+@if (Model.Count == 0) {
+    <p>No hay productos en stock</p>
+}
+<div class="row">
+    @foreach (var item in Model){
+    <div class="col-md-4 text-center my-3">
+        @if (@item.Foto != null) {
+            <img src="@item.Foto" width="100px" height="100px">
+        }
 
-    <h1>ProductosGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</h1>
-    @if (Model.Count == 0) {
-        <p>No hay productos en stock</p>
+        <p>@item.Nombre</p>
+
+        <div>
+            <a asp-action="Comprar" asp-route-codigo="@item.Id" class="btn btn-danger btn-lg">Comprar</a>
+        </div>
+        
+
+
+    </div>
     }
-
-    <ul class="list">
-    @foreach (var item in Model)
-    {
-        <li>@item.Foto</li>
-        <li>@item.Nombre</li>
-
-    }
-    </ul>
+</div>      

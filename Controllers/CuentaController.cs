@@ -32,7 +32,8 @@ namespace Proyecto_Final_Multiplataforma
                 IdentityResult resultado = _um.CreateAsync(usuario, model.Password1).Result;
         
                 if (resultado.Succeeded) {
-                    return RedirectToAction("index", "home");
+                    TempData["mensaje"]="Cuenta registrada.";
+                    return RedirectToAction("login", "cuenta");
                 }
                 else {
                     foreach (var item in resultado.Errors)

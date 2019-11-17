@@ -13,10 +13,16 @@ namespace Proyecto_Final_Multiplataforma.Controllers
         public ProductoController(MongoContext m) {
             _context = m;
         }
+         public IActionResult Comprar(int codigo) {
+            var producto = _context.Productos.Find(codigo);           
+            
+            return RedirectToAction("Index");
+        }
 
         public IActionResult Index(){
             var lista = _context.Productos.ToList();
             return View(lista);
+
         }
 
         [Authorize(Roles="admin")]

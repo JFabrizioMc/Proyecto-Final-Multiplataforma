@@ -43,7 +43,7 @@ namespace Proyecto_Final_Multiplataforma.Migrations
                         new
                         {
                             Id = "ROLE_ID",
-                            ConcurrencyStamp = "d3a63c61-8a64-48d1-8a4c-5b1fbdb9536f",
+                            ConcurrencyStamp = "2dfe6c8b-69ca-4120-af4e-80602a835916",
                             Name = "admin",
                             NormalizedName = "admin"
                         });
@@ -122,13 +122,13 @@ namespace Proyecto_Final_Multiplataforma.Migrations
                         {
                             Id = "ADMIN_ID",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "77487bbc-50bb-4f28-8004-ed469509743d",
+                            ConcurrencyStamp = "64ff611f-201d-4cd7-bfec-e5eb65f82e4d",
                             Email = "admin@admin.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "admin@admin.com",
                             NormalizedUserName = "admin@admin.com",
-                            PasswordHash = "AQAAAAEAACcQAAAAEC8V5ym1UBYRdwpKS0id8fpwDImI2FeSk81hn6JC5Z1MVrvqSkELcK+hGaehD2dfOg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEC1xUWst0ardvIQ3zCyCG7tv3Bc+br0NWxn/N39s5EIsLZ3WlAS/tXOmRzFazrLOIQ==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -157,11 +157,9 @@ namespace Proyecto_Final_Multiplataforma.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.Property<string>("LoginProvider")
-                        .HasMaxLength(128);
+                    b.Property<string>("LoginProvider");
 
-                    b.Property<string>("ProviderKey")
-                        .HasMaxLength(128);
+                    b.Property<string>("ProviderKey");
 
                     b.Property<string>("ProviderDisplayName");
 
@@ -199,11 +197,9 @@ namespace Proyecto_Final_Multiplataforma.Migrations
                 {
                     b.Property<string>("UserId");
 
-                    b.Property<string>("LoginProvider")
-                        .HasMaxLength(128);
+                    b.Property<string>("LoginProvider");
 
-                    b.Property<string>("Name")
-                        .HasMaxLength(128);
+                    b.Property<string>("Name");
 
                     b.Property<string>("Value");
 
@@ -228,17 +224,27 @@ namespace Proyecto_Final_Multiplataforma.Migrations
                         new
                         {
                             Id = 1,
-                            Nombre = "Teclados"
+                            Nombre = "CPU"
                         },
                         new
                         {
                             Id = 2,
-                            Nombre = "Audifonos"
+                            Nombre = "Pantallas"
                         },
                         new
                         {
                             Id = 3,
-                            Nombre = "Mouses"
+                            Nombre = "Audifonos"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Nombre = "Celulares"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Nombre = "Perifericos"
                         });
                 });
 
@@ -265,6 +271,17 @@ namespace Proyecto_Final_Multiplataforma.Migrations
                     b.HasIndex("CategoriaId");
 
                     b.ToTable("Productos");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CategoriaId = 1,
+                            Descripcion = "Es una buena pc para los juegos de ultima generacion",
+                            Foto = "https://http2.mlstatic.com/pc-gamer-core-i7-4ghz-16g-ram-gtx-1070-700w-ssd-1tera-D_NQ_NP_983679-MPE31254597571_062019-Q.jpg",
+                            Nombre = "PC GAMER INTEL CORE I7-9700 RAM 16GB 2TB + SSD 120GB VIDEO 4GB",
+                            PrecioUnit = 3935.00m
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

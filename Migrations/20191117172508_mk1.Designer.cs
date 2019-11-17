@@ -9,8 +9,8 @@ using Proyecto_Final_Multiplataforma.Models;
 namespace Proyecto_Final_Multiplataforma.Migrations
 {
     [DbContext(typeof(MongoContext))]
-    [Migration("20191116070243_asd")]
-    partial class asd
+    [Migration("20191117172508_mk1")]
+    partial class mk1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -45,7 +45,7 @@ namespace Proyecto_Final_Multiplataforma.Migrations
                         new
                         {
                             Id = "ROLE_ID",
-                            ConcurrencyStamp = "ae31aeec-8bef-463b-8a8a-c2730ad9a587",
+                            ConcurrencyStamp = "7fa837ea-f20d-4378-aada-af814cba898a",
                             Name = "admin",
                             NormalizedName = "admin"
                         });
@@ -124,17 +124,17 @@ namespace Proyecto_Final_Multiplataforma.Migrations
                         {
                             Id = "ADMIN_ID",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "75a847f3-23a7-4102-86e2-2fd5006a2acf",
+                            ConcurrencyStamp = "639981b2-d738-42e2-ba23-2e9138ec3a24",
                             Email = "admin@admin.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "admin@admin.com",
-                            NormalizedUserName = "admin",
-                            PasswordHash = "AQAAAAEAACcQAAAAEB+vSDlz8WiHvlwNRMPnFZm8xdNrePFE3NnhoIriJYb1Ufk9/X6m8YHu+GGejCb6Pg==",
+                            NormalizedUserName = "admin@admin.com",
+                            PasswordHash = "AQAAAAEAACcQAAAAEE+XUEh46xCNPWYtAOItyG2XgFLQFRDGHXU+/HVZ0KVaZ7n1r0V5WTQ6Bu/E3wO2CA==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
-                            UserName = "admin"
+                            UserName = "admin@admin.com"
                         });
                 });
 
@@ -159,11 +159,9 @@ namespace Proyecto_Final_Multiplataforma.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.Property<string>("LoginProvider")
-                        .HasMaxLength(128);
+                    b.Property<string>("LoginProvider");
 
-                    b.Property<string>("ProviderKey")
-                        .HasMaxLength(128);
+                    b.Property<string>("ProviderKey");
 
                     b.Property<string>("ProviderDisplayName");
 
@@ -201,11 +199,9 @@ namespace Proyecto_Final_Multiplataforma.Migrations
                 {
                     b.Property<string>("UserId");
 
-                    b.Property<string>("LoginProvider")
-                        .HasMaxLength(128);
+                    b.Property<string>("LoginProvider");
 
-                    b.Property<string>("Name")
-                        .HasMaxLength(128);
+                    b.Property<string>("Name");
 
                     b.Property<string>("Value");
 
@@ -230,17 +226,27 @@ namespace Proyecto_Final_Multiplataforma.Migrations
                         new
                         {
                             Id = 1,
-                            Nombre = "Teclados"
+                            Nombre = "CPU"
                         },
                         new
                         {
                             Id = 2,
-                            Nombre = "Audifonos"
+                            Nombre = "Pantallas"
                         },
                         new
                         {
                             Id = 3,
-                            Nombre = "Mouses"
+                            Nombre = "Audifonos"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Nombre = "Celulares"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Nombre = "Perifericos"
                         });
                 });
 
