@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Proyecto_Final_Multiplataforma.Models;
 
 namespace Proyecto_Final_Multiplataforma.Migrations
 {
     [DbContext(typeof(MongoContext))]
-    partial class MongoContextModelSnapshot : ModelSnapshot
+    [Migration("20191117181705_aea2019")]
+    partial class aea2019
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -43,11 +45,7 @@ namespace Proyecto_Final_Multiplataforma.Migrations
                         new
                         {
                             Id = "ROLE_ID",
-<<<<<<< HEAD
-                            ConcurrencyStamp = "46acc43c-075c-4ab5-afdb-c66c2ccb3daf",
-=======
                             ConcurrencyStamp = "a56fd1d9-30a0-4de3-96f7-96a857887f40",
->>>>>>> 05b437ffb6c94fb6b4c11e3e2168fcb53c78f5e7
                             Name = "admin",
                             NormalizedName = "admin"
                         });
@@ -126,21 +124,13 @@ namespace Proyecto_Final_Multiplataforma.Migrations
                         {
                             Id = "ADMIN_ID",
                             AccessFailedCount = 0,
-<<<<<<< HEAD
-                            ConcurrencyStamp = "772dbac5-7234-4300-8cc9-3eb397fdd4b3",
-=======
                             ConcurrencyStamp = "f23b2053-4c73-43a9-926a-9f5664752ad9",
->>>>>>> 05b437ffb6c94fb6b4c11e3e2168fcb53c78f5e7
                             Email = "admin@admin.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "admin@admin.com",
                             NormalizedUserName = "admin@admin.com",
-<<<<<<< HEAD
-                            PasswordHash = "AQAAAAEAACcQAAAAEG6Y1/cvdPZwl4MC3AXoij7TDnYqYlgBlqdU+pkxuRB6ZYSBeN8sSbI7fmFD7MyxsA==",
-=======
                             PasswordHash = "AQAAAAEAACcQAAAAEGzAIWja2pQ1HtwINjGp4sbNtHSMlgAo/Cd8VreTNrcK4p/KyglBEInXhSRk/w+EeA==",
->>>>>>> 05b437ffb6c94fb6b4c11e3e2168fcb53c78f5e7
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
