@@ -63,6 +63,27 @@ body {
   height: 800px;
 }
 
+.menu a{
+
+}
+.menu a:hover{
+  color: red;
+}
+
 .menu li{
   padding: 0px 28px;
+}
+
+.menu2 li{
+  list-style: none;
+  padding: 0px 23px;
+}
+
+.menu2 a{
+  text-decoration: none;
+  color: white;
+}
+
+.menu2 a:hover{
+  color: white;
 }

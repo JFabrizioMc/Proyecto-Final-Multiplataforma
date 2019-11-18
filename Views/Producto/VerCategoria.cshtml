@@ -20,7 +20,16 @@
         <p>@item.Nombre</p>
 
         <div>
-            <a asp-action="Comprar" asp-route-codigo="@item.Id" class="btn btn-danger btn-lg">Comprar S/.@item.PrecioUnit</a>
+             @if (User.Identity.IsAuthenticated) {
+            <form method="post">
+                <div>
+                    <input type="hidden" value="@item.Id" name="Id">
+                    <button class="btn btn-danger btn-lg">Comprar S/.@item.PrecioUnit</button>                
+                </div>
+            </form>
+        }else{
+            <a asp-controller="Cuenta" asp-action="Login" class="btn btn-danger">Comprar S/.@item.PrecioUnit</a>
+        }
         </div>
         
 

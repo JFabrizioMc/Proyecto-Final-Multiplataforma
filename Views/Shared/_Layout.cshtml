@@ -22,29 +22,21 @@
 <body>
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
-            <a class="navbar-brand" asp-controller="Home" asp-action="Index">MongoImports</a>
+            <a class="navbar-brand" asp-controller="Home" asp-action="Index">MongoImports<i class="fab fa-centos"></i></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav menu">
-                    
-                    
-                         <li class="nav-item active">
-                        <a class="nav-link" >Página Inicial<span class="sr-only">(current)</span></a>
-                         </li>
-                        <li class="nav-item">
-                        <a class="nav-link" asp-controller="Producto" asp-action="Index">Productos</a>
+                <ul class="navbar-nav menu">                  
+                        <li class="nav-item active">
+                        <a class="nav-link" asp-controller="Producto" asp-action="Index"><i class="fas fa-store-alt"></i>Productos</a>
                         </li>
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown active">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Categorías
-                        </a>
-
-                        
-
+                            <i class="fas fa-search"></i>Categorías
+                        </a>                       
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" asp-controller="Producto" asp-route-id=1 asp-action="VerCategoria">CPU</a>
                             <a class="dropdown-item"  asp-controller="Producto"asp-route-id=2 asp-action="VerCategoria">Pantallas</a>
@@ -57,45 +49,48 @@
                         </li>
                     @if (!User.Identity.IsAuthenticated) {
                         <li class="nav-item">
-                         <a class="nav-link" asp-controller="Cuenta" asp-action="Login">Iniciar Sesión</a>
+                         <a class="nav-link" asp-controller="Cuenta" asp-action="Login"><i class="fas fa-sign-in-alt"></i>Iniciar Sesión</a>
                         </li>
                         <li class="nav-item">
                          <a class="nav-link" asp-controller="Cuenta" asp-action="CrearCuenta">Regístrate</a>
                         </li>
-                     }
-                     else{
-                         @if (User.IsInRole("admin")) {
-                              <li class="nav-item">
-                        <a class="nav-link" asp-controller="Roles" asp-action="CrearRol">Crear Rol</a>
-                        </li>
-
-                         <li class="nav-item">
-                        <a class="nav-link" asp-controller="Roles" asp-action="AsociarRol">Asociar Rol</a>
-                        </li> 
-                        <li class="nav-item">
-                        <a class="nav-link" asp-controller="Producto" asp-action="AgregarProd">Agregar Productos</a>
-                        </li>
-
-                        <li class="nav-item">
-                        <a class="nav-link" asp-controller="Producto" asp-action="QuitarProd">Quitar Productos</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link" asp-controller="Producto" asp-action="AgregarProm">Agregar una Promocion/Descuento</a>
-                        </li>                          
-                        }
+                     }else{
                          <li class="nav-item active">
-                        <a class="nav-link" >@User.Identity.Name<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" ><i class="fas fa-user"></i>@User.Identity.Name<span class="sr-only">(current)</span></a>
                          </li>
 
-                        <li class="nav-item">
-                         <a class="nav-link" asp-controller="Cuenta" asp-action="Logout">Cerrar Sesión</a>
+                        <li class="nav-item active">
+                         <a class="nav-link" asp-controller="Cuenta" asp-action="Logout"><i class="fas fa-sign-out-alt"></i>Cerrar Sesión</a>
                         </li>
-                     }
+                    }
 
                 </ul>
             </div>
         </nav>        
     </div>
+    
+    <div class="container">
+        @if (User.IsInRole("admin")){
+        <nav class="navbar navbar-expand-lg navbar-dark bg-danger menu2">
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Roles" asp-action="CrearRol">Crear Rol</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Roles" asp-action="AsociarRol">Asociar Rol</a>
+                </li> 
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Producto" asp-action="AgregarProd">Agregar Productos</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" asp-controller="Producto" asp-action="QuitarProd">Quitar Productos</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" asp-controller="Producto" asp-action="AgregarProm">Agregar una Promocion/Descuento</a>
+                </li>                         
+        </nav>        
+        }
+    </div>
+    
     <div class="container">
         <partial name="_CookieConsentPartial" />
         <main role="main" class="pb-3">
