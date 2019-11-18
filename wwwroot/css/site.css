@@ -106,9 +106,8 @@ footer a:hover{
   border-radius: 15px;
 }
 
-.fondo{
-  background: url(https://images.pexels.com/photos/1097456/pexels-photo-1097456.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
-  height: 50vh;
+.fondo{  
+  height: 100vh;
   background-position: center;
   background-size: cover;
   color: white;
