@@ -15,6 +15,9 @@
     <div class="col-md-4 text-center my-3">
         @if (@item.Foto != null) {
             <img src="@item.Foto" width="100px" height="100px">
+            <div class="container">
+                    <button type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button>
+            </div>
         }
 
         <p>@item.Nombre</p>
@@ -31,3 +34,12 @@
     </div>
     }
 </div>      
+
+<script type="text/javascript">
+    $(function () {
+  $('.example-popover').popover({
+    container: 'body'
+  })
+})
+
+</script>
