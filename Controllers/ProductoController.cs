@@ -70,6 +70,9 @@ namespace Proyecto_Final_Multiplataforma.Controllers
                 return RedirectToAction("QuitarProd");
         }
 
+        public IActionResult AgregarProm(){
+            return View();
+        }
         public IActionResult VerCategoria(int id){
     
             var productos = _context.Productos.Where(x => x.CategoriaId == id).ToList();
