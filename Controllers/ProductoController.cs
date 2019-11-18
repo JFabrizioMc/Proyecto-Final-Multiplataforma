@@ -49,7 +49,7 @@ namespace Proyecto_Final_Multiplataforma.Controllers
             return View(p);
         }
         [HttpPost]
-         public IActionResult Quitar(Productos p)
+         public IActionResult QuitarProd(Productos p)
         {
             if (ModelState.IsValid) {
                 _context.Remove(p);
