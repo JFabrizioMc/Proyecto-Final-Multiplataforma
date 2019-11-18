@@ -8,6 +8,7 @@ using MailKit;
 using MimeKit;
 using System.Net;
 using System.Net.Mail;
+using System;
 
 namespace Proyecto_Final_Multiplataforma.Controllers
 {
@@ -49,11 +50,16 @@ namespace Proyecto_Final_Multiplataforma.Controllers
             // Credentials
             var credentials = new NetworkCredential("MongoImports@gmail.com", "Monguito13");
             // Mail message
+            DateTime fechaHoy = DateTime.Now;
+            Random r = new Random();
+            int aleatorio = r.Next(1,10000);
+
             var mail = new MailMessage()
             {
                 From = new MailAddress("MongoImports@gmail.com"),
-                Subject = "Email Sender App",
-                Body = "Usted esta comprando un: "+ nombre 
+                Subject = "Orden de compra Nro: "+aleatorio,
+                Body = "Gracias por confiar en nosotros, usted acaba de adquirir: "+ nombre
+                        + "\nFecha de compra: "+ fechaHoy.ToShortDateString() + " Un video para chillear: https://www.youtube.com/watch?v=-BxfE7i2H2I" 
             };
             mail.IsBodyHtml = true;
             mail.To.Add(new MailAddress(correo));

@@ -5,18 +5,18 @@
         @TempData["mensaje"]
     </div>
 }
-<div class="container-fluid" style="background-image: url(https://wallpaperplay.com/walls/full/3/5/2/219191.jpg)">
-<h1 class="text-center">Iniciar sesión</h1>
+<div class="container-fluid img-fluid fondo" >
+<h1 class="text-center mt-4">Iniciar sesión</h1>
 
-<form method="post">
+<form method="post" class="mt-5">
     <div asp-validation-summary="All"></div>
 
-    <div class="form-group">
+    <div class="form-group p-2">
         <label asp-for="Correo"></label>
         <input asp-for="Correo" class="form-control" placeholder="Correo Electronico">
     </div>
 
-    <div class="form-group">
+    <div class="form-group p-2">
         <label asp-for="Password"></label>
         <input asp-for="Password" class="form-control" placeholder="Contraseña">
     </div>
