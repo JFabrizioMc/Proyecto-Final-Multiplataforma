@@ -45,6 +45,9 @@ body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
 }
+body i{
+  padding: 0px 4px;
+}
 .footer {
   position: absolute;
   bottom: 0;
@@ -86,4 +89,9 @@ body {
 
 .menu2 a:hover{
   color: white;
+}
+
+footer i{
+  font-size: 25px;
+  color: black;
 }
