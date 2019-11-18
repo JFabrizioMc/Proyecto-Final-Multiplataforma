@@ -11,16 +11,11 @@
 <h1>Búsqueda por Categoría</h1>
 
 <div class="row">
-    @foreach (var item in Model ){
-    <div class="col-md-4 text-center my-3">
-        @if (@item.Foto != null) {
-            <img src="@item.Foto" width="200px" height="200px">
-        }
-
-        <p>@item.Nombre</p>
-
-        <div>
-             @if (User.Identity.IsAuthenticated) {
+    @foreach (var item in Model){
+    <div class="col-md-4 text-center my-3">        
+         <img src="@item.Foto" width="200px" height="200px">
+         <p>@item.Nombre</p>
+        @if (User.Identity.IsAuthenticated) {
             <form method="post">
                 <div>
                     <input type="hidden" value="@item.Id" name="Id">
@@ -30,6 +25,6 @@
         }else{
             <a asp-controller="Cuenta" asp-action="Login" class="btn btn-danger">Comprar S/.@item.PrecioUnit</a>
         }
-        </div>
+    </div>
     }
 </div>
