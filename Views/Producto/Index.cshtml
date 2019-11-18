@@ -13,16 +13,17 @@
 <div class="row">
     @foreach (var item in Model){
     <div class="col-md-4 text-center my-3">       
+        <img src="@item.Foto" width="200px" height="200px">
         <p>@item.Nombre</p>
         @if (User.Identity.IsAuthenticated) {
             <form method="post">
                 <div>
                     <input type="hidden" value="@item.Id" name="Id">
-                    <button class="btn btn-danger btn-lg">Comprar S/.@item.PrecioUnit</button>                
+                    <button class="btn btn-lg" style="color:white; background-color:#001f3f">Comprar S/.@item.PrecioUnit</button>                
                 </div>
             </form>
         }else{
-            <a asp-controller="Cuenta" asp-action="Login" class="btn btn-danger">Comprar S/.@item.PrecioUnit</a>
+            <a asp-controller="Cuenta" asp-action="Login" class="btn" style="color:white; background-color:#001f3f">Comprar S/.@item.PrecioUnit</a>
         }
     </div>
     }
