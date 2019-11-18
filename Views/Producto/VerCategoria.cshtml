@@ -11,7 +11,7 @@
 <h1>Categoría (Nombre de Categoría) </h1>
 
 <div class="row">
-    @foreach (var item in Model){
+    @foreach (var item in (ViewBag.)){
     <div class="col-md-4 text-center my-3">
         @if (@item.Foto != null) {
             <a tabindex="0" class="btn" role="button" data-toggle="popover" data-trigger="focus" title="Dismissible popover" data-content="@item.Descripcion"><img src="@item.Foto" width="200px" height="200px"></a>
