@@ -63,4 +63,6 @@ body {
   height: 800px;
 }
 
-
+.menu li{
+  padding: 0px 28px;
+}
