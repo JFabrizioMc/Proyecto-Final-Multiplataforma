@@ -18,16 +18,12 @@
         }
 
         <p>@item.Nombre</p>
-
-        <div>
-            <a asp-action="Comprar" asp-route-codigo="@item.Id" class="btn btn-danger btn-lg">Comprar S/.@item.PrecioUnit</a>
+        <form method="post">
+                <div>
+                    <input type="hidden" value="@item.Id" name="Id">
+                    <button class="btn btn-danger btn-lg">Comprar S/.@item.PrecioUnit</button>                
+                </div>
+            </form>
         </div>
-        
-
-        
-        
-
-
-    </div>
     }
 </div>

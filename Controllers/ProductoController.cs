@@ -45,7 +45,7 @@ namespace Proyecto_Final_Multiplataforma.Controllers
 
         [HttpPost]
         public IActionResult Orden(string nombre){
-           
+           var correo= @User.Identity.Name;
             // Credentials
             var credentials = new NetworkCredential("MongoImports@gmail.com", "Monguito13");
             // Mail message
@@ -56,7 +56,7 @@ namespace Proyecto_Final_Multiplataforma.Controllers
                 Body = "Usted esta comprando un: "+ nombre 
             };
             mail.IsBodyHtml = true;
-            mail.To.Add(new MailAddress("josefabriziomanco@gmail.com"));
+            mail.To.Add(new MailAddress(correo));
             // Smtp client
             var client = new System.Net.Mail.SmtpClient()
             {
@@ -109,10 +109,16 @@ namespace Proyecto_Final_Multiplataforma.Controllers
         }
         public IActionResult VerCategoria(int id){
     
-            var productos = _context.Productos.Where(x => x.CategoriaId == id).ToList();
-            
+            var productos = _context.Productos.Where(x => x.CategoriaId == id).ToList();            
 
             return View(productos);
+
+        }
+
+        [HttpPost]
+        public IActionResult VerCategoria(int id, decimal ez){
+             var producto = _context.Productos.Find(id);                      
+            return RedirectToAction("Orden",producto);
 
         }
  
