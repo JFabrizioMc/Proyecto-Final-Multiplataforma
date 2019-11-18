@@ -1,16 +1,34 @@
-@model Productos
-<h1  class="text-center">Quitar Producto(s)</h1>
-<form method="post">
-    <div class="form-group">
-        <label>Productos:</label>
-        <select asp-for="Id" class="form-control">
-            @foreach (var item in Model)
-            {
-                <option value="@item.Id">@item.Nombre</option>
-            }
-        </select>
-    </div>
+@model List<Productos>
 
-    <button class="form-control btn btn-danger">Quitar</button>
-    
-</form>
+@if (TempData["mensaje"] != null) {
+    <div class="alert alert-success">
+        @TempData["mensaje"]
+    </div>
+}
+
+<h1>Productos</h1>
+
+<div class="row">
+    @foreach (var item in Model){
+    <div class="col-md-4 text-center my-3">
+        @if (@item.Foto != null) {
+            <img src="@item.Foto" width="100px" height="100px">
+            <div class="container">
+                    
+            </div>
+        }
+
+        <p>@item.Nombre</p>
+
+        <div>
+            <a asp-action="QuitarProd" asp-route-codi="@item.Id" class="btn btn-danger btn-lg">Eliminar</a>
+        </div>
+        
+
+        
+        
+
+
+    </div>
+    }
+</div>      

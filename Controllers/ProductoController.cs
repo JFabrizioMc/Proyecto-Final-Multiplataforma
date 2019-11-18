@@ -31,7 +31,7 @@ namespace Proyecto_Final_Multiplataforma.Controllers
             ViewBag.Categorias = _context.Categorias.ToList();            
             return View();
         }
-        [Authorize(Roles="admin")]
+       
         public IActionResult QuitarProd(){
             ViewBag.Categorias = _context.Categorias.ToList();            
             return View();
@@ -49,24 +49,24 @@ namespace Proyecto_Final_Multiplataforma.Controllers
             return View(p);
         }
         [HttpPost]
-         public IActionResult Quitar(Productos p)
+         public IActionResult QuitarProd(int codi)
         {
             if (ModelState.IsValid) {
-                _context.Remove(p);
+                _context.Productos.Remove(_context.Productos.Find(codi)) ;
                 _context.SaveChanges();
                 TempData["mensaje"] = "El producto fue removido exitosamente";
                 return RedirectToAction("Index");
             }
-            ViewBag.Categorias = _context.Categorias.ToList();
-            return View(p);
+            
+            return View(codi);
         }
 
         public IActionResult VerCategoria(int id){
     
-            ViewBag.productos = _context.Productos.Where(x => x.CategoriaId == id).ToList();
-            ViewBag.categorias = _context.Categorias.Where(y => y.Id == id).ToList();
+            var productos = _context.Productos.Where(x => x.CategoriaId == id).ToList();
+            
 
-            return View();
+            return View(productos);
 
         }
  
