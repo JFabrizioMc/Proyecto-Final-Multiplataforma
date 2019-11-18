@@ -1,15 +1,15 @@
 @model List<Productos>
 
-
 @if (TempData["mensaje"] != null) {
     <div class="alert alert-success">
         @TempData["mensaje"]
     </div>
 }
 
-  
-<h1>Búsqueda por Categoría</h1>
-
+<h1>Productos</h1>
+@if (Model.Count == 0) {
+    <p>No hay productos en stock</p>
+}
 <div class="row">
     @foreach (var item in Model){
     <div class="col-md-4 text-center my-3">        
@@ -27,4 +27,4 @@
         }
     </div>
     }
-</div>
+</div>    
