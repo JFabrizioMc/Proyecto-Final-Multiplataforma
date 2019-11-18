@@ -1,7 +1,17 @@
 @model Productos
+
 <div class="alert alert-primary" role="alert">
   Compra realizada con éxito :) 
 </div>
-<p>Usted ha comprado: @Model.Nombre</p>
+<p>Usted ha comprado: @Model.Nombre</p> 
 <p>Precio: @Model.PrecioUnit</p>
+<p>Descripcion: @Model.Descripcion</p>
+    <form method="post">
+        <div>
+            <label>Introducir un correo: </label>
+            <input value="renattito" id="correo"> 
+            <input type ="hidden" value="@Model.Nombre" id="nombre">                   
+            <button class="btn btn-danger btn-lg">Enviar</button>                
+        </div>
+    </form>
 <p><img src="@Model.Foto"></p>

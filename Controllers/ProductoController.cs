@@ -3,6 +3,11 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Proyecto_Final_Multiplataforma.Models;
+using MailKit.Net.Smtp;
+using MailKit;
+using MimeKit;
+using System.Net;
+using System.Net.Mail;
 
 namespace Proyecto_Final_Multiplataforma.Controllers
 {
@@ -34,9 +39,38 @@ namespace Proyecto_Final_Multiplataforma.Controllers
         }
 
         
-        public IActionResult Orden(Productos producto){ 
-                              
+        public IActionResult Orden(Productos producto){                               
             return View(producto);
+        }
+
+        [HttpPost]
+        public IActionResult Orden(string nombre){
+           
+            // Credentials
+            var credentials = new NetworkCredential("MongoImports@gmail.com", "Monguito13");
+            // Mail message
+            var mail = new MailMessage()
+            {
+                From = new MailAddress("MongoImports@gmail.com"),
+                Subject = "Email Sender App",
+                Body = "Usted esta comprando un: "+ nombre 
+            };
+            mail.IsBodyHtml = true;
+            mail.To.Add(new MailAddress("josefabriziomanco@gmail.com"));
+            // Smtp client
+            var client = new System.Net.Mail.SmtpClient()
+            {
+                Port = 587,
+                DeliveryMethod = SmtpDeliveryMethod.Network,
+                UseDefaultCredentials = false,
+                Host = "smtp.gmail.com",
+                EnableSsl = true,
+                Credentials = credentials
+            };
+            client.Send(mail);                              
+                                
+            return RedirectToAction("Index");
+        
         }
 
         [Authorize(Roles="admin")]
