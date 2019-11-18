@@ -12,22 +12,18 @@
 }
 <div class="row">
     @foreach (var item in Model){
-    <div class="col-md-4 text-center my-3">
-        @if (@item.Foto != null) {
-            <img src="@item.Foto" width="200px" height="200px">
-        }
+    <div class="col-md-4 text-center my-3">        
+            @if (@item.Foto != null) {
+                <img src="@item.Foto" width="200px" height="200px">
+            }
 
-        <p>@item.Nombre</p>
-
-        <div>
-            <a asp-action="Comprar" asp-route-codigo="@item.Id" class="btn btn-danger btn-lg">Comprar S/.@item.PrecioUnit</a>
-        </div>
-        
-
-        
-        
-
-
+            <p>@item.Nombre</p>
+            <form method="post">
+                <div>
+                    <input type="hidden" value="@item.Id" name="Id">
+                    <button class="btn btn-danger btn-lg">Comprar S/.@item.PrecioUnit</button>                
+                </div>
+            </form>
     </div>
     }
 </div>      

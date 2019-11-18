@@ -26,6 +26,19 @@ namespace Proyecto_Final_Multiplataforma.Controllers
 
         }
 
+        [HttpPost]
+        public IActionResult Index(int id){
+            var producto = _context.Productos.Find(id);
+                      
+            return RedirectToAction("Orden",producto);
+        }
+
+        
+        public IActionResult Orden(Productos producto){ 
+                              
+            return View(producto);
+        }
+
         [Authorize(Roles="admin")]
         public IActionResult AgregarProd(){
             ViewBag.Categorias = _context.Categorias.ToList();            

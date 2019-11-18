@@ -14,6 +14,7 @@ namespace Proyecto_Final_Multiplataforma.Controllers
         {
             return View();
         }
+        
 
         public IActionResult Privacy()
         {
