@@ -31,6 +31,11 @@ namespace Proyecto_Final_Multiplataforma.Controllers
             ViewBag.Categorias = _context.Categorias.ToList();            
             return View();
         }
+        [Authorize(Roles="admin")]
+        public IActionResult QuitarProd(){
+            ViewBag.Categorias = _context.Categorias.ToList();            
+            return View();
+        }
         [HttpPost]
         public IActionResult AgregarProd(Productos p)
         {
@@ -43,13 +48,25 @@ namespace Proyecto_Final_Multiplataforma.Controllers
             ViewBag.Categorias = _context.Categorias.ToList();
             return View(p);
         }
+        [HttpPost]
+         public IActionResult Quitar(Productos p)
+        {
+            if (ModelState.IsValid) {
+                _context.Remove(p);
+                _context.SaveChanges();
+                TempData["mensaje"] = "El producto fue removido exitosamente";
+                return RedirectToAction("Index");
+            }
+            ViewBag.Categorias = _context.Categorias.ToList();
+            return View(p);
+        }
 
         public IActionResult VerCategoria(int id){
     
-            var productos = _context.Productos.Where(x => x.CategoriaId == id).ToList();
+            ViewBag.productos = _context.Productos.Where(x => x.CategoriaId == id).ToList();
+            ViewBag.categorias = _context.Categorias.Where(y => y.Id == id).ToList();
 
-  
-            return View(productos);
+            return View();
 
         }
  

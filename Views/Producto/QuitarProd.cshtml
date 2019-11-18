@@ -1,0 +1,16 @@
+@model Productos
+<h1  class="text-center">Quitar Producto(s)</h1>
+<form method="post">
+    <div class="form-group">
+        <label>Productos:</label>
+        <select asp-for="Id" class="form-control">
+            @foreach (var item in Model)
+            {
+                <option value="@item.Id">@item.Nombre</option>
+            }
+        </select>
+    </div>
+
+    <button class="form-control btn btn-danger">Quitar</button>
+    
+</form>
