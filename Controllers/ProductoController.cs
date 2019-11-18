@@ -33,8 +33,8 @@ namespace Proyecto_Final_Multiplataforma.Controllers
         }
        
         public IActionResult QuitarProd(){
-            ViewBag.Categorias = _context.Categorias.ToList();            
-            return View();
+            var lista = _context.Productos.ToList();
+            return View(lista);
         }
         [HttpPost]
         public IActionResult AgregarProd(Productos p)
@@ -49,16 +49,12 @@ namespace Proyecto_Final_Multiplataforma.Controllers
             return View(p);
         }
         [HttpPost]
-         public IActionResult QuitarProd(int codi)
+         public IActionResult QuitarProd(int num)
         {
-            if (ModelState.IsValid) {
-                _context.Productos.Remove(_context.Productos.Find(codi)) ;
+                _context.Productos.Remove(_context.Productos.Find(num));
                 _context.SaveChanges();
                 TempData["mensaje"] = "El producto fue removido exitosamente";
-                return RedirectToAction("Index");
-            }
-            
-            return View(codi);
+                return RedirectToAction("QuitarProd");
         }
 
         public IActionResult VerCategoria(int id){

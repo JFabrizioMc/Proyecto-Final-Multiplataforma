@@ -1,0 +1,38 @@
+@model List<Productos>
+
+@if (TempData["mensaje"] != null) {
+    <div class="alert alert-success">
+        @TempData["mensaje"]
+    </div>
+}
+
+<h1>Productos</h1>
+@if (Model.Count == 0) {
+    <p>No hay productos para eliminar :v</p>
+}
+<form method="post">
+<div class="row">
+    
+    @foreach (var item in Model){
+    <div class="col-md-4 text-center my-3">
+        @if (@item.Foto != null) {
+            <img src="@item.Foto" width="200px" height="200px">
+        }
+
+        <p>@item.Nombre</p>
+
+        <div>
+            <button asp-action="QuitarProd" asp-route-num="@item.Id" class="form-control btn btn-danger">Quitar</button>
+        </div>
+        
+
+        
+        
+
+
+    </div>
+    }
+ 
+</div>      
+
+   </form>
