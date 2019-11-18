@@ -18,6 +18,7 @@
               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"/>
     </environment>
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/all.css" />
 </head>
 <body>
     <div class="container" >
@@ -48,10 +49,10 @@
 
                         </li>
                     @if (!User.Identity.IsAuthenticated) {
-                        <li class="nav-item">
+                        <li class="nav-item active">
                          <a class="nav-link" asp-controller="Cuenta" asp-action="Login"><i class="fas fa-sign-in-alt"></i>Iniciar Sesión</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item active">
                          <a class="nav-link" asp-controller="Cuenta" asp-action="CrearCuenta">Regístrate</a>
                         </li>
                      }else{

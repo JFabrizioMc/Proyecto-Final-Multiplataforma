@@ -13,7 +13,8 @@
 <div class="row">
     @foreach (var item in Model){
     <div class="col-md-4 text-center my-3">        
-        <p>@item.Nombre</p>
+         <img src="@item.Foto" width="200px" height="200px">
+         <p>@item.Nombre</p>
         @if (User.Identity.IsAuthenticated) {
             <form method="post">
                 <div>
